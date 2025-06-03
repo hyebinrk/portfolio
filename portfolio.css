@@ -1,0 +1,280 @@
+        @font-face {
+            font-family: 'nanumsquare';
+            src: url('./fonts/NanumSquare_acB.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        :root{
+            --color-python: #FFEDFA;
+            --color-sql: #FFB8E0;
+            --color-html: #333446;
+            --color-css: #7F8CAA;
+            --color-js: #B8CFCE;
+            --color-spring: #EAEFEF;
+            --color-oracle: #FFE99A;
+            --color-git: #90C67C;
+            --color-vscode: #90C67C;
+            --color-qt: #67AE6E;
+            --color-dbeaver: #328E6E;
+            --color-jupyter: #626F47;  
+
+            --hover-python: #fdc9ee;
+            --hover-sql: #fa90cc;
+            --hover-html: #7e80a4;
+            --hover-css: #b4c4ec;
+            --hover-js: #8ca3a2;
+            --hover-spring: #c2c9c9;
+            --hover-oracle: #FFD586;
+            --hover-git: #6c965d;
+            --hover-vscode: #78a568;
+            --hover-qt: #57915d;
+            --hover-dbeaver: #246b52;
+            --hover-jupyter: #3e462e;
+        }
+        body {
+            font-family: 'nanumsquare', sans-serif;
+            margin: 0;
+            background: #f5f5f5;
+            color: #333;
+            scroll-behavior: smooth;
+        } 
+        section {
+        height: 100vh;  
+        display: flex;
+        flex-direction: column; /* 텍스트를 위→아래 정렬 */
+        justify-content: center;
+        align-items: center;
+        padding: 0rem 2rem;
+        box-sizing: border-box; /* heigth안에 padding이 포함되어 실제 높이를 넘지 않게됨*/
+        
+        }
+
+        .home-image {
+            background-image: url("/img/profile.jpg");
+            background-size: 230px auto;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            background-position: 0px -40px;
+            margin: 0 auto; /* 가운데 정렬 */
+        }        
+        /* home 섹션만 화면 전체 중앙 정렬 */
+        #home {
+            position:relative; /* 배경 텍스트 포지셔닝을 위해 */
+            background-color: #f3e1e4;
+            padding-top: 0px;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden; /* 텍스트 넘치는 거 숨김 */
+        }
+        /* 배경 텍스트 공통 스타일 */
+        .wm {
+            position: absolute;
+            font-size: 6rem;
+            font-weight: 900;
+            color: transparent;
+            -webkit-text-stroke: 1.5px white;
+            opacity: 1;
+            pointer-events: none;
+            white-space: nowrap;
+            transition: transform 0.5s ease-out, opacity 0.5s ease;
+            z-index: 0;
+            transform: translateX(0); /* 초기 위치 */
+        }
+
+        /* 왼쪽 상단에 배치 */
+        .left-text {
+            top: 40px;
+            left: 40px;
+            transform: translateX(-150px); /*왼쪽에서 시작*/
+        }
+
+        /* 오른쪽 하단에 배치 */
+        .right-text {
+            bottom: 40px;
+            right: 40px;
+            transform: translateX(150px); /* 오른쪽에서 시작 */
+        }
+        .wm.animate-in {
+            transform: translateX(0);
+            opacity: 0.12;
+        }
+
+        /* 컨텐츠는 항상 배경 위에 */
+        .section-container {
+            position: relative;
+            z-index: 1;
+        }
+                
+        #about{
+            background-color: #FAF1E6;
+        }
+        #skills{
+            background-color: #FDFAF6;
+        }
+        #projects{
+            background-color: #E4EFE7;
+        }
+        #contact{
+            background-color: #99BC85;
+        }
+
+        /* 제목 스타일 여백 추가 */
+        h2 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-left: 20px;
+        }
+
+        h1, h2, h3 {         
+            padding-left: 20px;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #966b76af;
+            padding: 12px 0;
+            text-align: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none; /* 클릭방지 */
+        }
+        nav.show{
+            opacity: 1;
+            pointer-events: auto; /* 다시 클릭 가능 */
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 50px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: white;
+            text-shadow: 0 0 5px rgba(252, 220, 235, 0.8),
+                         0 0 10px rgba(243, 177, 208, 0.8);
+        }
+        .skill-box{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 1em;
+        }
+        .skill {                
+                color: #333;
+                padding: 8px 12px;
+                border-radius: 8px;
+                font-size: 14px;
+                margin: 5px;
+                font-family: sans-serf;
+                box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+                transition: background-color 0.3s ease, color 0.3ease;
+        }
+        
+        .skill[data-skill="python"]{
+            background-color: var(--color-python);
+            color: black
+        }
+        .skill[data-skill="python"]:hover{
+            background-color: var(--hover-python);
+        }
+        .skill[data-skill="sql"]{
+            background-color: var(--color-sql);
+            color: black
+        }
+        .skill[data-skill="sql"]:hover{
+            background-color: var(--hover-sql);
+        }
+        .skill[data-skill="html"]{
+            background-color: var(--color-html);
+            color: rgb(213, 211, 250)
+        }
+        .skill[data-skill="html"]:hover{
+            background-color: var(--hover-html);
+        }
+        .skill[data-skill="css"]{
+            background-color: var(--color-css);
+            color: black
+        }
+        .skill[data-skill="css"]:hover{
+            background-color: var(--hover-css);
+        }
+        .skill[data-skill="js"]{
+            background-color: var(--color-js);
+            color: black
+        }
+        .skill[data-skill="js"]:hover{
+            background-color: var(--hover-js);
+        }
+        .skill[data-skill="spring"]{
+            background-color: var(--color-spring);
+            color: black
+        }
+        .skill[data-skill="spring"]:hover{
+            background-color: var(--hover-spring);
+        }
+        .skill[data-skill="oracle"]{
+            background-color: var(--color-oracle);
+            color: black
+        }
+        .skill[data-skill="oracle"]:hover{
+            background-color: var(--hover-oracle);
+        }
+        .skill[data-skill="git"]{
+            background-color: var(--color-git);
+            color: black
+        }
+        .skill[data-skill="git"]:hover{
+            background-color: var(--hover-git);
+        }
+        .skill[data-skill="vscode"]{
+            background-color: var(--color-vscode);
+            color: black
+        }
+        .skill[data-skill="vscode"]:hover{
+            background-color: var(--hover-vscode);
+        }
+        .skill[data-skill="qt"]{
+            background-color: var(--color-qt);
+            color: black
+        }
+        .skill[data-skill="qt"]:hover{
+            background-color: var(--hover-qt);
+        }
+        .skill[data-skill="dbeaver"]{
+            background-color: var(--color-dbeaver);
+            color: black
+        }
+        .skill[data-skill="dbeaver"]:hover{
+            background-color: var(--hover-dbeaver);
+        }
+        .skill[data-skill="jupyter"]{
+            background-color: var(--color-jupyter);
+            color: black
+        }
+        .skill[data-skill="jupyter"]:hover{
+            background-color: var(--hover-jupyter);
+        }
+        
+
+        footer {
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 10px 20px;
+            background-color: #966b76af;
+            color: white;
+            border-radius: 20px;
+            text-decoration: none;
+        }

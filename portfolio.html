@@ -4,200 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>포트폴리오_박혜빈</title>
-    <style>
-        @font-face {
-            font-family: 'nanumsquare';
-            src: url('./fonts/NanumSquare_acB.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-        :root{
-            --color-python: #FFEDFA;
-            --color-sql: #FFB8E0;
-            --color-html: #333446;
-            --color-css: #7F8CAA;
-            --color-js: #B8CFCE;
-            --color-spring: #EAEFEF;
-            --color-oracle: #f44336;
-            --color-git: #f1502f;
-            --color-vscode: #007acc;
-            --color-qt: #41cd52;
-            --color-dbeaver: #37474f;
-            --color-jupyter: #f37726;  
-
-            --hover-python: #fdc9ee;
-            --hover-sql: #fa90cc;
-            --hover-html: #7e80a4;
-            --hover-css: #b4c4ec;
-            --hover-js: #8ca3a2;
-            --hover-spring: #c2c9c9;
-            --hover-oracle: #e57373;
-            --hover-git: #ff7043;
-            --hover-vscode: #2196f3;
-            --hover-qt: #81c784;
-            --hover-dbeaver: #546e7a;
-            --hover-jupyter: #ff9800;
-        }
-        body {
-            font-family: 'nanumsquare', sans-serif;
-            margin: 0;
-            background: #f5f5f5;
-            color: #333;
-            scroll-behavior: smooth;
-        }
- 
-        /* section {
-        height: 100vh;  한 화면 가득 차게 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-        margin-bottom: 50%;
-        margin-top: 10rem;  
-        } */
-        .home-image {
-            background-image: url("/img/profile.jpg");
-            background-size: 230px auto;
-            width: 230px;
-            height: 230px;
-            border-radius: 50%;
-            background-position: 0px -40px;
-            margin: 0 auto; /* 가운데 정렬 */
-        }
-        /* #home{
-            padding-top: 10px;
-        } */
-         /* 공통 section 스타일 최소화 */
-        section {
-            padding: 4rem 2rem;
-            margin-bottom: 4rem;
-        }
-
-        /* home 섹션만 화면 전체 중앙 정렬 */
-        #home {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        /* 제목 스타일 여백 추가 */
-        h2 {
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            padding-left: 20px;
-        }
-
-        h1, h2, h3 {         
-            padding-left: 20px;
-        }
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: #966b76af;
-            padding: 12px 0;
-            text-align: center;
-            z-index: 1000;
-            opacity: 0;
-            transition: opacity 0.5s;
-            pointer-events: none; /* 클릭방지 */
-        }
-        nav.show{
-            opacity: 1;
-            pointer-events: auto; /* 다시 클릭 가능 */
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 50px;
-            font-size: 1.2rem;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: white;
-            text-shadow: 0 0 5px rgba(252, 220, 235, 0.8),
-                         0 0 10px rgba(243, 177, 208, 0.8);
-        }
-        .skill-box{
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 1em;
-        }
-        .skill {                
-                color: #333;
-                padding: 8px 12px;
-                border-radius: 8px;
-                font-size: 14px;
-                margin: 5px;
-                font-family: sans-serf;
-                box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-                transition: background-color 0.3s ease, color 0.3ease;
-        }
-        
-        .skill[data-skill="python"]{
-            background-color: var(--color-python);
-            color: black
-        }
-        .skill[data-skill="python"]:hover{
-            background-color: var(--hover-python);
-        }
-        .skill[data-skill="sql"]{
-            background-color: var(--color-sql);
-            color: black
-        }
-        .skill[data-skill="sql"]:hover{
-            background-color: var(--hover-sql);
-        }
-        .skill[data-skill="html"]{
-            background-color: var(--color-html);
-            color: rgb(213, 211, 250)
-        }
-        .skill[data-skill="html"]:hover{
-            background-color: var(--hover-html);
-        }
-        .skill[data-skill="css"]{
-            background-color: var(--color-css);
-            color: black
-        }
-        .skill[data-skill="css"]:hover{
-            background-color: var(--hover-css);
-        }
-        .skill[data-skill="js"]{
-            background-color: var(--color-js);
-            color: black
-        }
-        .skill[data-skill="js"]:hover{
-            background-color: var(--hover-js);
-        }
-        .skill[data-skill="spring"]{
-            background-color: var(--color-spring);
-            color: black
-        }
-        .skill[data-skill="spring"]:hover{
-            background-color: var(--hover-spring);
-        }
-        
-
-        footer {
-            text-align: center;
-            font-size: 14px;
-            color: #777;
-        }
-        .btn {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 10px 20px;
-            background-color: #966b76af;
-            color: white;
-            border-radius: 20px;
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="/portfolio.css">
 </head>
 <body>
     <nav>
@@ -208,6 +15,9 @@
     </nav>
     
     <section id="home">
+        <div class="wm left-text">portfolio</div>
+        <div class="wm right-text">PARK HYEBIN</div>
+
         <div class="section-container">
             <div class="home-image"></div>
             <h2>안녕하세요. 신입 개발자 박혜빈 입니다.</h2>      
@@ -240,16 +50,16 @@
 
         <h3>Database</h3>
         <div class="skill-box">
-            <span class="skill"  data-skill="Oracle">Oracle</span>
+            <span class="skill"  data-skill="oracle">Oracle</span>
         </div>
 
         <h3>Tools</h3>
         <div class="skill-box">
-            <span class="skill" data-skill="Git">Git</span>
-            <span class="skill" data-skill="Code">VS Code</span>
-            <span class="skill" data-skill="Qt Designer">Qt Designer</span>
-            <span class="skill" data-skill="DBeaver">DBeaver</span>
-            <span class="skill" data-skill="JupyterLab">JupyterLab</span>
+            <span class="skill" data-skill="git">Git</span>
+            <span class="skill" data-skill="vscode">VS Code</span>
+            <span class="skill" data-skill="qt">Qt Designer</span>
+            <span class="skill" data-skill="dbeaver">DBeaver</span>
+            <span class="skill" data-skill="jupyter">JupyterLab</span>
         </div>
     </section>
 
@@ -274,8 +84,8 @@
     <section id="contact">
         <h2>contact</h2>
         <p>
-            이메일 : example@example.com<br>
-            GitHub : <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
+            이메일 : gpqls3698@naver.com<br>
+            GitHub : <a href="https://github.com/hyebinrk" target="_blank">github.com/yourusername</a>
         </p>
     </section>
 
@@ -290,6 +100,37 @@
             } else {
                 nav.classList.remove('show');
             }
+        });
+
+          window.addEventListener('DOMContentLoaded', () => {
+            // 화면 로드 후 등장 애니메이션 트리거
+            const left = document.querySelector('.left-text');
+            const right = document.querySelector('.right-text');
+
+            // 잠깐 delay 후 등장 (부드럽게)
+            setTimeout(() => {
+            left.classList.add('animate-in');
+            right.classList.add('animate-in');
+            }, 300);
+        });
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+
+            const triggerScroll = 100; // 이만큼 스크롤해야 효과 시작됨
+            const maxScroll = 300; // 이만큼 스크롤하면 완전히 사라짐
+
+            const progress = Math.min(Math.max((scrollY - triggerScroll) / (maxScroll - triggerScroll), 0), 1);
+
+            const left = document.querySelector('.left-text');
+            const right = document.querySelector('.right-text');
+
+            // progress가 0일 때는 변화 없음 → 가만히 있을 때 안 사라짐
+            left.style.transform = `translateX(${-progress * 150}px)`;
+            left.style.opacity = `${1 - progress}`;
+
+            right.style.transform = `translateX(${progress * 150}px)`;
+            right.style.opacity = `${1 - progress}`;
         });
     </script>
 
