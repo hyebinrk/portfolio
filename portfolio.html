@@ -11,6 +11,33 @@
             font-weight: normal;
             font-style: normal;
         }
+        :root{
+            --color-python: #FFEDFA;
+            --color-sql: #FFB8E0;
+            --color-html: #333446;
+            --color-css: #7F8CAA;
+            --color-js: #B8CFCE;
+            --color-spring: #EAEFEF;
+            --color-oracle: #f44336;
+            --color-git: #f1502f;
+            --color-vscode: #007acc;
+            --color-qt: #41cd52;
+            --color-dbeaver: #37474f;
+            --color-jupyter: #f37726;  
+
+            --hover-python: #fdc9ee;
+            --hover-sql: #fa90cc;
+            --hover-html: #7e80a4;
+            --hover-css: #b4c4ec;
+            --hover-js: #8ca3a2;
+            --hover-spring: #c2c9c9;
+            --hover-oracle: #e57373;
+            --hover-git: #ff7043;
+            --hover-vscode: #2196f3;
+            --hover-qt: #81c784;
+            --hover-dbeaver: #546e7a;
+            --hover-jupyter: #ff9800;
+        }
         body {
             font-family: 'nanumsquare', sans-serif;
             margin: 0;
@@ -19,25 +46,51 @@
             scroll-behavior: smooth;
         }
  
-        section {
-        height: 100vh;  /* 한 화면 가득 차게 */
+        /* section {
+        height: 100vh;  한 화면 가득 차게 
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         padding: 2rem;
-        }
+        margin-bottom: 50%;
+        margin-top: 10rem;  
+        } */
         .home-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%; /* 원형 이미지 */
-            object-fit: cover;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            background-image: url("/img/profile.jpg");
+            background-size: 230px auto;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            background-position: 0px -40px;
+            margin: 0 auto; /* 가운데 정렬 */
+        }
+        /* #home{
+            padding-top: 10px;
+        } */
+         /* 공통 section 스타일 최소화 */
+        section {
+            padding: 4rem 2rem;
+            margin-bottom: 4rem;
         }
 
-        h1, h2 {
-            
+        /* home 섹션만 화면 전체 중앙 정렬 */
+        #home {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* 제목 스타일 여백 추가 */
+        h2 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-left: 20px;
+        }
+
+        h1, h2, h3 {         
             padding-left: 20px;
         }
         nav {
@@ -69,6 +122,67 @@
             text-shadow: 0 0 5px rgba(252, 220, 235, 0.8),
                          0 0 10px rgba(243, 177, 208, 0.8);
         }
+        .skill-box{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 1em;
+        }
+        .skill {                
+                color: #333;
+                padding: 8px 12px;
+                border-radius: 8px;
+                font-size: 14px;
+                margin: 5px;
+                font-family: sans-serf;
+                box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+                transition: background-color 0.3s ease, color 0.3ease;
+        }
+        
+        .skill[data-skill="python"]{
+            background-color: var(--color-python);
+            color: black
+        }
+        .skill[data-skill="python"]:hover{
+            background-color: var(--hover-python);
+        }
+        .skill[data-skill="sql"]{
+            background-color: var(--color-sql);
+            color: black
+        }
+        .skill[data-skill="sql"]:hover{
+            background-color: var(--hover-sql);
+        }
+        .skill[data-skill="html"]{
+            background-color: var(--color-html);
+            color: rgb(213, 211, 250)
+        }
+        .skill[data-skill="html"]:hover{
+            background-color: var(--hover-html);
+        }
+        .skill[data-skill="css"]{
+            background-color: var(--color-css);
+            color: black
+        }
+        .skill[data-skill="css"]:hover{
+            background-color: var(--hover-css);
+        }
+        .skill[data-skill="js"]{
+            background-color: var(--color-js);
+            color: black
+        }
+        .skill[data-skill="js"]:hover{
+            background-color: var(--hover-js);
+        }
+        .skill[data-skill="spring"]{
+            background-color: var(--color-spring);
+            color: black
+        }
+        .skill[data-skill="spring"]:hover{
+            background-color: var(--hover-spring);
+        }
+        
+
         footer {
             text-align: center;
             font-size: 14px;
@@ -95,8 +209,8 @@
     
     <section id="home">
         <div class="section-container">
-            <img src="img/프로필 이미지.jpg" alt="프로필 이미지" class="home-image">
-            <h2>안녕하세요. 신입 웹 개발자 박혜빈 입니다.</h2>      
+            <div class="home-image"></div>
+            <h2>안녕하세요. 신입 개발자 박혜빈 입니다.</h2>      
             <p>현재는 python과 웹 개발 기술을 중심으로 배우고 있으며 다양한 프로젝트를 통해 실력을 키워나가고 있습니다.</p>
             <a href="#about" class="btn">▼ ▼</a>
         </div>
@@ -104,19 +218,41 @@
     
     <section id="about">
         <h2>about</h2>
-        <p>저는 책임감 있게 배우고 성장해나가는 웹 개발자 지망생입니다. <br>
+        <p>저는 책임감 있게 배우고 성장해나가는 개발자 지망생입니다. <br>
            배움과 협업을 통해 사용자 중심의 웹 서비스를 만드는 것이 목표입니다.</p>
     </section>
 
     <section id="skills">
-        <h2>skills</h2>
-        <ul>
-            <li><strong>Languages : </strong>Python, SQL</li>
-            <li><strong>Web : </strong>HTML, CSS, JavaScript, Spring Boot</li>
-            <li><strong>Database : </strong>Oracle</li>
-            <li><strong>Tools : </strong>Git, VS Code, Qt Designer, DBeaver, JupyterLab</li>
-        </ul>
+    <h2>Skills</h2>
+        <h3>Languages</h3>
+        <div class="skill-box">
+            <span class="skill" data-skill="python">Python</span>
+            <span class="skill" data-skill="sql">SQL</span>
+        </div>
+
+        <h3>Web</h3>
+        <div class="skill-box">
+            <span class="skill" data-skill="html">HTML</span>
+            <span class="skill" data-skill="css">CSS</span>
+            <span class="skill" data-skill="js">JavaScript</span>
+            <span class="skill"  data-skill="spring">Spring Boot</span>
+        </div>
+
+        <h3>Database</h3>
+        <div class="skill-box">
+            <span class="skill"  data-skill="Oracle">Oracle</span>
+        </div>
+
+        <h3>Tools</h3>
+        <div class="skill-box">
+            <span class="skill" data-skill="Git">Git</span>
+            <span class="skill" data-skill="Code">VS Code</span>
+            <span class="skill" data-skill="Qt Designer">Qt Designer</span>
+            <span class="skill" data-skill="DBeaver">DBeaver</span>
+            <span class="skill" data-skill="JupyterLab">JupyterLab</span>
+        </div>
     </section>
+
 
     <section id="projects">
         <h2>projects</h2>
