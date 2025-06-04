@@ -73,7 +73,7 @@
         /* 배경 텍스트 공통 스타일 */
         .wm {
             position: absolute;
-            font-size: 6rem;
+            font-size: 8rem;
             font-weight: 900;
             color: transparent;
             -webkit-text-stroke: 1.5px white;
@@ -95,7 +95,7 @@
         /* 오른쪽 하단에 배치 */
         .right-text {
             bottom: 40px;
-            right: 40px;
+            right: 0px;
             transform: translateX(150px); /* 오른쪽에서 시작 */
         }
         .wm.animate-in {
