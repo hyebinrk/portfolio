@@ -60,7 +60,7 @@
         /* home 섹션만 화면 전체 중앙 정렬 */
         #home {
             position:relative; /* 배경 텍스트 포지셔닝을 위해 */
-            background-color: #f3e1e4;
+            background-color: #FFF0BD;
             padding-top: 0px;
             height: 100vh;
             display: flex;
@@ -124,7 +124,7 @@
         /* ❤️여기서부터 자소서섹션 */
                 
         #about{
-            background-color: #f2fbee;
+            background-color: #FDFAF6;
             position: relative;
             display: flex;
             justify-content: center;
@@ -135,7 +135,7 @@
             
         }
         .position-about{
-            background-color: #b4b99f;
+            background-color: #E4EFE7;
             border-radius: 5px;
             /* about 내부 콘텐츠 중앙 배치용 */
             padding: 20px;
@@ -156,23 +156,23 @@
 
         /* 스크롤바 배경 */
         .position-about::-webkit-scrollbar-track {
-            background: #d8dfcb;
+            background: #9EC6F3;
             border-radius: 5px;
             /* margin: 5px; */
         }
 
         .position-about::-webkit-scrollbar-thumb {
-            background: #bacb97;
+            background: #9FB3DF;
             border-radius: 5px;
         }
 
         .position-about::-webkit-scrollbar-thumb:hover {
-            background: #eef0ea;
+            background: #9FB3DF;
         }
 
         .section-block {
-            background: #f8f9fa;
-            border: 4px solid #afc7b2;
+            background: #99BC85;
+            border: 4px solid #BDDDE4;
             border-radius: 12px;
             margin-bottom: 20px;
             overflow: hidden;
@@ -186,7 +186,7 @@
         }
 
         .section-title {
-            background: #bacb97;
+            background: #9FB3DF;
             color: white;
             padding: 15px 20px;
             font-size: 18px;
@@ -375,8 +375,271 @@
         .skill[data-skill="jupyter"]:hover{
             background-color: var(--hover-jupyter);
         }
-        
 
+/* 프로젝트 전체 섹션 */
+        #projects {
+            background-color: #f2fbee;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 2rem;
+            box-sizing: border-box;
+            flex-direction: column;
+        }
+
+        .projects-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .position-project {
+            width: 45%;
+            box-sizing: border-box;
+            background-color: #b4b99f;
+            border-radius: 10px;
+            padding: 0;
+            max-width: 500px;
+            height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 프로젝트 제목 */
+        .project-title {
+            background: linear-gradient(135deg, #8b956d, #74894c);
+            color: white;
+            padding: 20px;
+            margin: 0;
+            border-radius: 10px 10px 0 0;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* 프로젝트 내용 컨테이너 */
+        .project-content {
+            padding: 20px;
+        }
+
+        /* 이미지 + 기본정보 섹션 */
+        .project-header {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* 이미지 캐러셀 컨테이너 */
+        .image-carousel {
+            width: 120px;
+            height: 90px;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            background-color: #e8e8e8;
+        }
+
+        .carousel-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            flex-shrink: 0;
+        }
+
+        /* 캐러셀 버튼 */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .carousel-btn.prev {
+            left: 5px;
+        }
+
+        .carousel-btn.next {
+            right: 5px;
+        }
+
+        /* 인디케이터 */
+        .carousel-indicators {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 3px;
+        }
+
+        .indicator {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .indicator.active {
+            background: white;
+        }
+
+        .project-info {
+            flex: 1;
+            font-size: 13px;
+        }
+
+        .info-item {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #5a6b42;
+            min-width: 60px;
+            margin-right: 8px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .tech-tag {
+            background: #e8f5e8;
+            color: #4a5c37;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            border: 1px solid #d1e7d1;
+        }
+
+        /* 섹션 구분 */
+        .project-section {
+            margin-bottom: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            border-left: 4px solid #8b956d;
+        }
+
+        .section-title {
+            font-weight: bold;
+            color: #5a6b42;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .section-content {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .feature-list {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .feature-list li {
+            margin-bottom: 5px;
+        }
+
+        /* 링크 버튼 */
+        .project-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .project-link {
+            background: linear-gradient(135deg, #8b956d, #74894c);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            flex: 1;
+        }
+
+        .project-link:hover {
+            background: linear-gradient(135deg, #74894c, #5a6b42);
+            transform: translateY(-2px);
+        }
+
+        /* 스크롤바 스타일 */
+        .position-project::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .position-project::-webkit-scrollbar-track {
+            background: #d8dfcb;
+            border-radius: 4px;
+        }
+
+        .position-project::-webkit-scrollbar-thumb {
+            background: #bacb97;
+            border-radius: 4px;
+        }
+
+        .position-project::-webkit-scrollbar-thumb:hover {
+            background: #a5b882;
+        }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .projects-wrapper {
+                flex-direction: column;
+            }
+            
+            .position-project {
+                width: 90%;
+                height: 70vh;
+            }
+        }
+        
+        
         footer {
             text-align: center;
             font-size: 14px;
