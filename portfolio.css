@@ -49,18 +49,23 @@
         }
 
         .home-image {
-            background-image: url("/img/profile.jpg");
+            background: url("/img/profile.jpg");
             background-size: 230px auto;
             width: 230px;
             height: 230px;
             border-radius: 50%;
             background-position: 0px -40px;
             margin: 0 auto; /* 가운데 정렬 */
+            border: 8px solid #6ba6ff6e;
+            
         }        
         /* home 섹션만 화면 전체 중앙 정렬 */
         #home {
             position:relative; /* 배경 텍스트 포지셔닝을 위해 */
-            background-color: #FFF0BD;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://i.pinimg.com/736x/2f/ec/e2/2fece21b31b95af012d6e53bda304404.jpg');
+            background-size: cover;        /* 화면에 맞게 확대 */
+            background-repeat: no-repeat;  /* 반복 방지 */
+            background-position: center;   /* 중앙 정렬 */   
             padding-top: 0px;
             height: 100vh;
             display: flex;
@@ -69,13 +74,14 @@
             text-align: center;
             overflow: hidden; /* 텍스트 넘치는 거 숨김 */
         }
+
         /* 배경 텍스트 공통 스타일 */
         .wm {
             position: absolute;
             font-size: 8rem;
             font-weight: 900;
             color: transparent;
-            -webkit-text-stroke: 1.5px white;
+            -webkit-text-stroke: 2px rgb(213, 217, 242);
             opacity: 1;
             pointer-events: none;
             white-space: nowrap;
@@ -99,7 +105,7 @@
         }
         .wm.animate-in {
             transform: translateX(0);
-            opacity: 0.12;
+            opacity: 1;
         }
 
         /* 컨텐츠는 항상 배경 위에 */
@@ -117,25 +123,32 @@
             position:relative;
         }
         #contact{
-            background-color: #99BC85;
-            position:relative;
+            background:  linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://i.pinimg.com/736x/65/94/73/659473e45b5234e1df99fa66de17e128.jpg');
+            transform: rotate(-90);
+            position: relative;
+            background-size: cover;        /* 화면에 맞게 확대 */
+            background-repeat: no-repeat;  /* 반복 방지 */
+            background-position: center;   /* 중앙 정렬 */   
         }
+
 
         /* ❤️여기서부터 자소서섹션 */
                 
         #about{
-            background-color: #FDFAF6;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://i.pinimg.com/736x/7b/59/b8/7b59b8027101711cc07d99f93e5fe653.jpg');
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             padding: 2rem;
-            box-sizing: border-box; 
-            
+            box-sizing: border-box;
+            background-size: cover;        /* 화면에 맞게 확대 */
+            background-repeat: no-repeat;  /* 반복 방지 */
+            background-position: center;   /* 중앙 정렬 */            
         }
         .position-about{
-            background-color: #E4EFE7;
+            background-color: #E3F4F4;
             border-radius: 5px;
             /* about 내부 콘텐츠 중앙 배치용 */
             padding: 20px;
@@ -171,7 +184,7 @@
         }
 
         .section-block {
-            background: #99BC85;
+            background: #D2E9E9;
             border: 4px solid #BDDDE4;
             border-radius: 12px;
             margin-bottom: 20px;
@@ -186,7 +199,7 @@
         }
 
         .section-title {
-            background: #9FB3DF;
+            background: #C4DFDF;
             color: white;
             padding: 15px 20px;
             font-size: 18px;
@@ -250,16 +263,16 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: #966b76af;
+            background: #93b5c6;
             padding: 12px 0;
             text-align: center;
             z-index: 1000;
             opacity: 0;
-            transition: opacity 0.5s;
+            transition: opacity 0.5s ease;
             pointer-events: none; /* 클릭방지 */
         }
         nav.show{
-            opacity: 1;
+            opacity: 0.3;
             pointer-events: auto; /* 다시 클릭 가능 */
         }
         nav a {
@@ -271,8 +284,8 @@
         }
         nav a:hover {
             color: white;
-            text-shadow: 0 0 5px rgba(252, 220, 235, 0.8),
-                         0 0 10px rgba(243, 177, 208, 0.8);
+            text-shadow: 0 0 5px rgba(253, 243, 248, 0.8),
+                         0 0 10px #FFE3E3;
         }
         .skill-box{
             display: flex;
@@ -378,7 +391,7 @@
 
 /* 프로젝트 전체 섹션 */
         #projects {
-            background-color: #f2fbee;
+            background:  linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), #f2fbee;
             position: relative;
             display: flex;
             justify-content: center;
